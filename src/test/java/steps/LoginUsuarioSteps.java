@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginUsuarioSteps {
-    private WebDriver driver;
+    private WebDriver driver = null;
     ChomeHPets abrirHpets = new ChomeHPets();
     LoginUsuarioPage loginPage = new LoginUsuarioPage();
 
@@ -17,6 +17,7 @@ public class LoginUsuarioSteps {
         driver = abrirHpets.AbrirNavegador();
         driver.findElement(By.id("email")).sendKeys(loginPage.getUsuario());
         driver.findElement(By.id("password")).sendKeys(loginPage.getSenha());
+
     }
 
     @When("Inserir os dados e tentar realizar o login")
@@ -26,6 +27,8 @@ public class LoginUsuarioSteps {
 
     @Then("O login é validado e o acesso é liberado")
     public void o_login_e_validado_e_o_acesso_e_liberado()  {
+        driver.findElement(By.cssSelector(".hamburguer")).click();
+        driver.findElement(By.xpath("//li/a[text()='Logout']")).click();
         abrirHpets.fecharNavegador();
     }
 }
