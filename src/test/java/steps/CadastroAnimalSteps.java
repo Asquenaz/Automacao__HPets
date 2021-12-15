@@ -38,7 +38,7 @@ public class CadastroAnimalSteps {
     @When("preenchendo_com_dados_corretos")
     public void preenchendoComDadosCorretos() {
         Actions builder = new Actions(driver);
-        WebElement element = driver.findElement(By.id("add"));
+        WebElement element  = driver.findElement(By.id("add"));
         WebElement dropdown = driver.findElement(By.id("especie"));
 
         builder.moveToElement(element, 0, 0).perform();
