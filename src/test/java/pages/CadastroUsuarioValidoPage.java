@@ -2,7 +2,7 @@ package pages;
 
 import java.util.Random;
 
-public class CadastroUsuarioPage {
+public class CadastroUsuarioValidoPage {
     String nome = "Guilherme Teste";
     String senha = "12345678G@";
     String confirmacaoSenha = senha ;
@@ -18,6 +18,7 @@ public class CadastroUsuarioPage {
     public String getConfirmacaoSenha() {
         return confirmacaoSenha;
     }
+
 
     public String emailFormatado(){
         Random random = new Random();

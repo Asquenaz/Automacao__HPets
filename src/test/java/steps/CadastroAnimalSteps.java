@@ -4,6 +4,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.BeforeClass;
 import pages.CadastroAnimalPage;
 import pages.LoginUsuarioPage;
 import org.openqa.selenium.By;
@@ -19,17 +20,15 @@ public class CadastroAnimalSteps {
 
     private WebDriver driver;
 
-    @Before
-    public void before(){
+
+    @Given("Que esteja na tela de cadastro de animais")
+    public void queEstejaNaTelaDeCadastroDeAnimais() {
 
         driver = abrirHpets.AbrirNavegador();
 
         driver.findElement(By.id("email")).sendKeys(loginPage.getUsuario());
         driver.findElement(By.id("password")).sendKeys(loginPage.getSenha());
-    }
 
-    @Given("Que esteja na tela de cadastro de animais")
-    public void queEstejaNaTelaDeCadastroDeAnimais() {
         driver.findElement(By.cssSelector(".btn-primary")).click();
         driver.findElement(By.cssSelector(".fa-paw")).click();
         driver.findElement(By.id("add")).click();
@@ -54,6 +53,6 @@ public class CadastroAnimalSteps {
     @Then("o cadastro do animal e realizado")
     public void oCadastroDoAnimalERealizado() {
        driver.findElement(By.xpath("//button[@type='submit']")).click();
-       abrirHpets.fecharNavegador();
+       //abrirHpets.fecharNavegador();
     }
 }

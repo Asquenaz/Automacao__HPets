@@ -1,6 +1,6 @@
 package pages;
 
-public class CadastroInvalidoPages {
+public class CadastroUsuarioInvalidoPages {
     String nome = "Guilherme";
     String senha = "12345678";
     String confirmacaoSenha = senha ;
@@ -18,7 +18,7 @@ public class CadastroInvalidoPages {
     }
 
     public String emailFormatado(){
-        CadastroUsuarioPage emaildeTeste = new CadastroUsuarioPage();
+        CadastroUsuarioValidoPage emaildeTeste = new CadastroUsuarioValidoPage();
 
             return  emaildeTeste.emailFormatado();
     }

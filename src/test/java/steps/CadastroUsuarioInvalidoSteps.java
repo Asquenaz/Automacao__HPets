@@ -1,26 +1,24 @@
 package steps;
 
-import io.cucumber.java.Before;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.CadastroInvalidoPages;
+import pages.CadastroUsuarioInvalidoPages;
 import utils.ChomeHPets;
+
 
 public class CadastroUsuarioInvalidoSteps {
     ChomeHPets abrirHpets = new ChomeHPets();
-    CadastroInvalidoPages cadInvalido = new CadastroInvalidoPages();
+    CadastroUsuarioInvalidoPages cadInvalido = new CadastroUsuarioInvalidoPages();
     private WebDriver driver;
 
-    @Before
-    public void before(){
-        driver = abrirHpets.AbrirNavegador();
-    }
 
     @Given("Que estou na tela de de cadastro")
     public void que_estou_na_tela_de_de_cadastro() {
+        driver = abrirHpets.AbrirNavegador();
         driver.findElement(By.id("cad-tab")).click();
 
     }
@@ -37,7 +35,6 @@ public class CadastroUsuarioInvalidoSteps {
     @Then("O cadastro nao e realizado")
     public void o_cadastro_nao_e_realizado()  {
         driver.findElement(By.cssSelector(".btn")).click();
-        abrirHpets.fecharNavegador();
+        //abrirHpets.fecharNavegador();
     }
-
 }

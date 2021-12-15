@@ -1,7 +1,7 @@
 #language eng
   Feature:  Realizar cadastro com dados invalidos
 
-    @Cadastro_Invalido
+    @CadastroUsuarioComDadosInvalidos
     Scenario: Realizar cadastro com senha invalida
 
       Given Que estou na tela de de cadastro

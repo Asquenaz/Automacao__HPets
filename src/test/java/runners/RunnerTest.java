@@ -13,8 +13,12 @@ import org.junit.runner.RunWith;
         monochrome = true,
         publish = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = ("@Cadastro_Invalido"),
+        tags = ("@CadastroUsuarioComDadosInvalidos"),
+        //tags = ("@CadastroUsuarioComDadosValidos"),
+        //tags = ("@LoginUsuario"),
+        //tags = ("@CadastroAnimal"),
         stepNotifications = true
 )
 public class RunnerTest {
+
 }
