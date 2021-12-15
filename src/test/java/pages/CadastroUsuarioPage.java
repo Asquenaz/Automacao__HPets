@@ -21,12 +21,10 @@ public class CadastroUsuarioPage {
 
     public String emailFormatado(){
         Random random = new Random();
+
         int numero = random. nextInt(100);
-
-        String email = "Automatizado";
         String complementoEmail = "@guilherme.com.br";
-        String getEmailFinal =  email + numero + complementoEmail;
 
-        return  getEmailFinal;
+        return  "Automatizado" + numero + complementoEmail;
     }
 }

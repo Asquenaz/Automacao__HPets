@@ -20,7 +20,7 @@ public class CadastroUsuarioInvalidoSteps {
     }
 
     @Given("Que estou na tela de de cadastro")
-    public void que_estou_na_tela_de_de_cadastro() {;
+    public void que_estou_na_tela_de_de_cadastro() {
         driver.findElement(By.id("cad-tab")).click();
 
     }
