@@ -53,6 +53,6 @@ public class CadastroAnimalSteps {
     @Then("o cadastro do animal e realizado")
     public void oCadastroDoAnimalERealizado() {
        driver.findElement(By.xpath("//button[@type='submit']")).click();
-       //abrirHpets.fecharNavegador();
+       abrirHpets.fecharNavegador();
     }
 }

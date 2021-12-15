@@ -35,6 +35,6 @@ public class CadastroUsuarioInvalidoSteps {
     @Then("O cadastro nao e realizado")
     public void o_cadastro_nao_e_realizado()  {
         driver.findElement(By.cssSelector(".btn")).click();
-        //abrirHpets.fecharNavegador();
+        abrirHpets.fecharNavegador();
     }
 }

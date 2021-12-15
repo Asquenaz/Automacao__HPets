@@ -38,6 +38,6 @@ public class CadastroUsuarioValidoSteps {
 
     @Then("o cadastro e realizado")
     public void oCadastroERealizado() {
-        //abrirHpets.fecharNavegador();
+        abrirHpets.fecharNavegador();
     }
 }

@@ -20,7 +20,7 @@ public class LoginUsuarioSteps {
     }
     @When("Inserir os dados e tentar realizar o login")
     public void inserir_os_dados_e_tentar_realizar_o_login() {
-        driver.findElement(By.cssSelector(".btn-primary")).click();
+         driver.findElement(By.cssSelector(".btn-primary")).click();
     }
 
     @Then("O login é validado e o acesso é liberado")
