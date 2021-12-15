@@ -15,11 +15,13 @@ import utils.ChomeHPets;
 public class CadastroAnimalSteps {
     LoginUsuarioPage loginPage = new LoginUsuarioPage();
     CadastroAnimalPage cadAnimal = new CadastroAnimalPage();
+    ChomeHPets abrirHpets = new ChomeHPets();
+
     private WebDriver driver;
 
     @Before
     public void before(){
-        ChomeHPets abrirHpets = new ChomeHPets();
+
         driver = abrirHpets.AbrirNavegador();
 
         driver.findElement(By.id("email")).sendKeys(loginPage.getUsuario());
@@ -51,7 +53,7 @@ public class CadastroAnimalSteps {
 
     @Then("o cadastro do animal e realizado")
     public void oCadastroDoAnimalERealizado() {
-       // driver.findElement(By.xpath("//button[@type='submit']")).click();
-      //  driver.quit();
+       driver.findElement(By.xpath("//button[@type='submit']")).click();
+       abrirHpets.fecharNavegador();
     }
 }

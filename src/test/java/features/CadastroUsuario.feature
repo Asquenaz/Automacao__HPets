@@ -1,3 +1,5 @@
+#language eng
+
 Feature: Testar funcionalidade "Realizar cadastro" no site healthPets
 
   @Realizar_cadastro

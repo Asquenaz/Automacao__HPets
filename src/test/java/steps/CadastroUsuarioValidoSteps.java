@@ -1,4 +1,5 @@
 package steps;
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import pages.CadastroUsuarioPage;
 import io.cucumber.java.en.Given;
@@ -7,16 +8,20 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import utils.ChomeHPets;
 
-public class CadastroUsuarioSteps {
+public class CadastroUsuarioValidoSteps {
     ChomeHPets abrirHpets = new ChomeHPets();
     private WebDriver driver;
+
+    @Before
+    public void before(){
+        driver = abrirHpets.AbrirNavegador();
+        driver.findElement(By.id("cad-tab")).click();
+    }
 
     @Given("que tenha os dados validos para realizar o cadastro")
     public void queTenhaOsDadosValidosParaRealizarOCadastro() {
         CadastroUsuarioPage cadUserPage = new CadastroUsuarioPage();
-        driver = abrirHpets.AbrirNavegador();
 
-        driver.findElement(By.id("cad-tab")).click();
         driver.findElement(By.id("name")).sendKeys(cadUserPage.getNome());
         driver.findElement(By.id("email")).sendKeys(cadUserPage.emailFormatado());
         driver.findElement(By.id("password")).sendKeys(cadUserPage.getSenha());

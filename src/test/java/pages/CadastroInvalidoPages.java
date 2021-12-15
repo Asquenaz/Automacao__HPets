@@ -2,9 +2,9 @@ package pages;
 
 import java.util.Random;
 
-public class CadastroUsuarioPage {
-    String nome = "Guilherme Teste";
-    String senha = "12345678G@";
+public class CadastroInvalidoPages {
+    String nome = "Guilherme";
+    String senha = "12345678";
     String confirmacaoSenha = senha ;
 
     public String getNome() {

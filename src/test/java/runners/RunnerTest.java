@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         monochrome = true,
         publish = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = ("@Realizar_cadastro_animal"),
+        tags = ("@Cadastro_Invalido"),
         stepNotifications = true
 )
 public class RunnerTest {
