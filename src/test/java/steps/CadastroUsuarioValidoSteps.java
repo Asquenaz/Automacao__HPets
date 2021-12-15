@@ -12,10 +12,6 @@ public class CadastroUsuarioValidoSteps {
     ChomeHPets abrirHpets = new ChomeHPets();
     private WebDriver driver;
 
-    @Before
-    public void before(){
-
-    }
 
     @Given("que tenha os dados validos para realizar o cadastro")
     public void queTenhaOsDadosValidosParaRealizarOCadastro() {
@@ -29,7 +25,6 @@ public class CadastroUsuarioValidoSteps {
         driver.findElement(By.id("password")).sendKeys(cadUserPage.getSenha());
         driver.findElement(By.id("password-confirm")).sendKeys(cadUserPage.getConfirmacaoSenha());
     }
-
 
     @When("inseridos os dados nos campos corretos")
     public void inseridos_os_dados_nos_campos_corretos() {

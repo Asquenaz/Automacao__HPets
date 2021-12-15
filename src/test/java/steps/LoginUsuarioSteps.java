@@ -18,6 +18,7 @@ public class LoginUsuarioSteps {
         driver.findElement(By.id("email")).sendKeys(loginPage.getUsuario());
         driver.findElement(By.id("password")).sendKeys(loginPage.getSenha());
     }
+
     @When("Inserir os dados e tentar realizar o login")
     public void inserir_os_dados_e_tentar_realizar_o_login() {
          driver.findElement(By.cssSelector(".btn-primary")).click();

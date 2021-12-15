@@ -1,16 +1,14 @@
 package steps;
 
-import io.cucumber.java.Before;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.BeforeClass;
 import pages.CadastroAnimalPage;
 import pages.LoginUsuarioPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import utils.ChomeHPets;
 
 public class CadastroAnimalSteps {
@@ -20,10 +18,8 @@ public class CadastroAnimalSteps {
 
     private WebDriver driver;
 
-
     @Given("Que esteja na tela de cadastro de animais")
     public void queEstejaNaTelaDeCadastroDeAnimais() {
-
         driver = abrirHpets.AbrirNavegador();
 
         driver.findElement(By.id("email")).sendKeys(loginPage.getUsuario());
