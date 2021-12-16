@@ -7,18 +7,18 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.CadastroUsuarioInvalidoPages;
-import utils.ChomeHPets;
+import utils.Browser;
 
 
 public class CadastroUsuarioInvalidoSteps {
-    ChomeHPets abrirHpets = new ChomeHPets();
+    Browser abrirHpets = new Browser();
     CadastroUsuarioInvalidoPages cadInvalido = new CadastroUsuarioInvalidoPages();
     private WebDriver driver;
 
 
     @Given("Que estou na tela de de cadastro")
     public void que_estou_na_tela_de_de_cadastro() {
-        driver = abrirHpets.AbrirNavegador();
+        driver = abrirHpets.getDriver();
         driver.findElement(By.id("cad-tab")).click();
 
     }

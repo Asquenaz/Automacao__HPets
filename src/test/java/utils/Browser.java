@@ -1,26 +1,25 @@
 package utils;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ChomeHPets {
-    private WebDriver driver;
-    private String baseUrl = "https://healthpets.app.br";
+public class Browser {
 
-    @Before
-    public WebDriver AbrirNavegador() {
+    private static WebDriver driver;
+    private static String baseUrl = "https://healthpets.app.br";
+
+
+    public  static void  AbrirNavegador() {
         System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get(baseUrl);
+    }
 
+    public static WebDriver getDriver(){
         return driver;
     }
 
-    @After
-    public WebDriver fecharNavegador (){
+    public static void fecharNavegador (){
         driver.quit();
-
-        return driver;
     }
 }
