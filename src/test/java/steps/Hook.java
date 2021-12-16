@@ -12,8 +12,8 @@ public class Hook {
         Browser.AbrirNavegador();
     }
 
-    @After
-    public static void fim(){
-        Browser.fecharNavegador();
-    }
+//    @After
+//    public static void fim(){
+//        Browser.fecharNavegador();
+//    }
 }
