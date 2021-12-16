@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Browser;
 import utils.DadosAcesso;
 
@@ -22,12 +24,11 @@ public class LoginUsuarioPage {
     public void efetuarLogin (){
         Browser.getDriver().findElement(By.cssSelector(".btn-primary")).click();
     }
-
-    public void efetuarLogout() {
+    public void efetuarLogout() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(Browser.getDriver(),25);
         Browser.getDriver().findElement(By.cssSelector(".hamburguer")).click();
-        Browser.getDriver().findElement(By.linkText("Logout")).click();
-         //  driver.findElement(By.xpath("//li/a[text()='Logout']")).click();
-        //  browser.fecharNavegador();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li/a[text()='Logout']")));
+        browser.fecharNavegador();
     }
 }
 

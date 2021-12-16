@@ -20,7 +20,7 @@ public class LoginUsuarioSteps {
          login.efetuarLogin();
     }
     @Then("O login é validado e o acesso é liberado")
-    public void o_login_e_validado_e_o_acesso_e_liberado()  {
+    public void o_login_e_validado_e_o_acesso_e_liberado() throws InterruptedException {
         login.efetuarLogout();
     }
 }
