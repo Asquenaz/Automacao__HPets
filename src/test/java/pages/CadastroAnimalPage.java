@@ -7,17 +7,14 @@ import org.openqa.selenium.By;
 import utils.DadosAcesso;
 import utils.Browser;
 
-
 public class CadastroAnimalPage {
+    LoginUsuarioPage login = new LoginUsuarioPage();
     DadosAcesso dados = new DadosAcesso();
     Browser browser = new Browser();
     WebDriver driver = browser.getDriver();
 
     public void acessarTelaCadastro() {
-        Browser.getDriver().findElement(By.id("email")).sendKeys(dados.getEmail());
-        Browser.getDriver().findElement(By.id("password")).sendKeys(dados.getSenha());
-
-        driver.findElement(By.cssSelector(".btn-primary")).click();
+        login.efetuarLogin();
         driver.findElement(By.cssSelector(".fa-paw")).click();
         driver.findElement(By.id("add")).click();
     }
@@ -39,10 +36,8 @@ public class CadastroAnimalPage {
     }
 
     public void realizarCadastro() throws InterruptedException {
-        LoginUsuarioPage logout = new LoginUsuarioPage();
-
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-        logout.efetuarLogout();
+        login.efetuarLogout();
     }
 }
 

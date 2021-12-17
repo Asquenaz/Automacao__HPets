@@ -11,14 +11,14 @@ public class LoginUsuarioSteps {
 
     @Given("Que tenha os dados validos para login")
     public void que_tenha_os_dados_validos_para_login() {
-        login.getEmail();
-        login.getSenha();
+        login.dadosLogin();
     }
 
     @When("Inserir os dados e tentar realizar o login")
     public void inserir_os_dados_e_tentar_realizar_o_login() {
-         login.efetuarLogin();
+         login.clicarBotaoLogin();
     }
+
     @Then("O login é validado e o acesso é liberado")
     public void o_login_e_validado_e_o_acesso_e_liberado() throws InterruptedException {
         login.efetuarLogout();

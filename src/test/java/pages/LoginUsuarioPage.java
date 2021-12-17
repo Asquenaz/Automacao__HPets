@@ -12,21 +12,21 @@ public class LoginUsuarioPage {
     Browser browser = new Browser();
     WebDriver driver = browser.getDriver();
 
-    public void getEmail (){
-       Browser.getDriver().findElement(By.id("email")).sendKeys(dados.getEmail());
 
-    }
-    public void getSenha (){
+    public void dadosLogin (){
+        Browser.getDriver().findElement(By.id("email")).sendKeys(dados.getEmail());
         Browser.getDriver().findElement(By.id("password")).sendKeys(dados.getSenha());
     }
-    public void fazerLogin (){
-        getEmail();
-        getSenha();
+
+    public void clicarBotaoLogin (){
         Browser.getDriver().findElement(By.cssSelector(".btn-primary")).click();
     }
 
-    public void efetuarLogin (){
+    public void efetuarLogin(){
+        Browser.getDriver().findElement(By.id("email")).sendKeys(dados.getEmail());
+        Browser.getDriver().findElement(By.id("password")).sendKeys(dados.getSenha());
         Browser.getDriver().findElement(By.cssSelector(".btn-primary")).click();
+
     }
     public void efetuarLogout() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(Browser.getDriver(),25);
