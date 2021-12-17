@@ -13,12 +13,16 @@ public class LoginUsuarioPage {
     WebDriver driver = browser.getDriver();
 
     public void getEmail (){
-
        Browser.getDriver().findElement(By.id("email")).sendKeys(dados.getEmail());
 
     }
     public void getSenha (){
         Browser.getDriver().findElement(By.id("password")).sendKeys(dados.getSenha());
+    }
+    public void fazerLogin (){
+        getEmail();
+        getSenha();
+        Browser.getDriver().findElement(By.cssSelector(".btn-primary")).click();
     }
 
     public void efetuarLogin (){

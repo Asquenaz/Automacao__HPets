@@ -5,7 +5,7 @@ import io.cucumber.java.Before;
 
 import utils.Browser;
 
-public class Hook {
+public class HookSteps {
 
     @Before
     public static void inicio(){

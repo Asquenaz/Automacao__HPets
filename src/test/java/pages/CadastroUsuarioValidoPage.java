@@ -1,31 +1,32 @@
 package pages;
 
-import java.util.Random;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import utils.Browser;
+import utils.DadosAcesso;
 
 public class CadastroUsuarioValidoPage {
-    String nome = "Guilherme Teste";
-    String senha = "12345678G@";
-    String confirmacaoSenha = senha ;
+    DadosAcesso dadosAcesso = new DadosAcesso();
 
-    public String getNome() {
-        return nome;
+
+    Browser abrirHpets = new Browser();
+    private WebDriver driver;
+
+    public void acessarTelaCadastro() {
+        driver = abrirHpets.getDriver();
+        driver.findElement(By.id("cad-tab")).click();
     }
 
-    public String getSenha() {
-        return senha;
+    public void inserirDadosValidos() {
+        driver.findElement(By.id("name")).sendKeys(dadosAcesso.getNomeValido());
+        driver.findElement(By.id("email")).sendKeys(dadosAcesso.emailFormatado());
+        driver.findElement(By.id("password")).sendKeys(dadosAcesso.getSenhaValido());
+        driver.findElement(By.id("password-confirm")).sendKeys(dadosAcesso.getConfirmacaoSenhaValida());
+        driver.findElement(By.cssSelector(".btn")).click();
     }
 
-    public String getConfirmacaoSenha() {
-        return confirmacaoSenha;
-    }
-
-
-    public String emailFormatado(){
-        Random random = new Random();
-
-        int numero = random. nextInt(100);
-        String complementoEmail = "@guilherme.com.br";
-
-        return  "Automatizado" + numero + complementoEmail;
+    public void cadastroRealizado() throws InterruptedException {
+        LoginUsuarioPage logout = new LoginUsuarioPage();
+        logout.efetuarLogout();
     }
 }

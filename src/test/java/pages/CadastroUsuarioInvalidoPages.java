@@ -1,25 +1,35 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import utils.Browser;
+import utils.DadosAcesso;
+
 public class CadastroUsuarioInvalidoPages {
-    String nome = "Guilherme";
-    String senha = "12345678";
-    String confirmacaoSenha = senha ;
+    private WebDriver driver;
 
-    public String getNome() {
-        return nome;
+    Browser abrirHpets = new Browser();
+    DadosAcesso dados = new DadosAcesso();
+
+
+    public void telaCadastro() {
+        driver = abrirHpets.getDriver();
+        driver.findElement(By.id("cad-tab")).click();
+
     }
 
-    public String getSenha() {
-        return senha;
+    public void inserirDadosCadastro() {
+        driver.findElement(By.id("name")).sendKeys(dados.getNomeCadastro());
+        driver.findElement(By.id("email")).sendKeys(emailFormatado());
+        driver.findElement(By.id("password")).sendKeys(dados.getSenhaCadastro());
+        driver.findElement(By.id("password-confirm")).sendKeys(dados.getConfirmacaoSenha());
+
+    }
+    public void tentativaCadastro() throws InterruptedException {
+        driver.findElement(By.cssSelector(".btn")).click();
     }
 
-    public String getConfirmacaoSenha() {
-        return confirmacaoSenha;
-    }
-
-    public String emailFormatado(){
-        CadastroUsuarioValidoPage emaildeTeste = new CadastroUsuarioValidoPage();
-
-            return  emaildeTeste.emailFormatado();
+    public String emailFormatado() {
+        return dados.emailFormatado();
     }
 }

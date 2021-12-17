@@ -15,8 +15,8 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         //tags = ("@CadastroUsuarioComDadosInvalidos"),
         //tags = ("@CadastroUsuarioComDadosValidos"),
-        tags = ("@LoginUsuario"),
-        //tags = ("@CadastroAnimal"),
+        //tags = ("@LoginUsuario"),
+        tags = ("@CadastroAnimal"),
         stepNotifications = true
 )
 public class RunnerTest {
